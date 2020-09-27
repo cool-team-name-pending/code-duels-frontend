@@ -1,25 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import Contest from "./Components/Contest";
+import { BrowserRouter, Route } from "react-router-dom";
+import Problem from "./Components/Problem";
 
 function App() {
+  const fetchProblemData = (index, name) => {
+    return {
+      judge: 1,
+      contestId: "1419",
+      index,
+      name,
+    };
+  };
+
+  const getProblems = (count) => {
+    const problems = [];
+    const index = ["A", "B", "C", "D", "E", "F"];
+    const problemNames = [
+      "Rain of Fire",
+      "Tushar and Girls",
+      "EEE and his problems",
+      "Saanda's Diary",
+      "PIE UPSC Classes",
+      "Earth and Rain",
+    ];
+    for (let i = 0; i < count; i++) {
+      problems.push(fetchProblemData(index[i], problemNames[i]));
+    }
+    return problems;
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/contest"
+          render={(props) => <Contest problems={getProblems(6)} {...props} />}
+        />
+        <Route
+          exact
+          path="/contest/index=A"
+          render={(props) => <Problem problem={getProblems(6)[0]} {...props} />}
+        />
+      </div>
+    </BrowserRouter>
   );
 }
 
