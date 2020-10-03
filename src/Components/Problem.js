@@ -153,7 +153,7 @@ class Problem extends Component {
     return (
       <div className="container problem-container">
         <h3 className="red-text">
-          {this.props.problem.index}. {this.props.problem.name}
+          {this.props.problem.index} - {this.props.problem.name}
         </h3>
         {this._renderProblemStatement()}
         {this._renderProblemInput()}
