@@ -116,8 +116,39 @@ class Problem extends Component {
     );
   }
   _renderSampleTestCases() {
-    return;
+    return problemData.sampleTestCases.map((testCase) => {
+      return (
+        <div className="testcase" key={testCase.input}>
+          <div className="testcase-header">Input</div>
+          <div
+            className="testcase-body"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(testCase.input),
+            }}
+          ></div>
+          <div className="testcase-header">Output</div>
+          <div
+            className="testcase-body"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(testCase.output),
+            }}
+          ></div>
+        </div>
+      );
+    });
   }
+  _renderNote = () => {
+    return (
+      <div>
+        <div className="red-text">Note</div>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(problemData.note.htmlNote),
+          }}
+        ></p>
+      </div>
+    );
+  };
   render() {
     return (
       <div className="container problem-container">
@@ -127,7 +158,9 @@ class Problem extends Component {
         {this._renderProblemStatement()}
         {this._renderProblemInput()}
         {this._renderProblemOutput()}
+        <h5 className="red-text ">Sample Test Cases</h5>
         {this._renderSampleTestCases()}
+        {this._renderNote()}
       </div>
     );
   }
