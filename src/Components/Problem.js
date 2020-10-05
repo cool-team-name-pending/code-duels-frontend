@@ -4,11 +4,11 @@ import "./Problem.css";
 const problemData = {
   statement: {
     htmlStatement:
-      '<p>There are $$$n$$$ detachments on the surface, numbered from $$$1$$$ to $$$n$$$, the $$$i$$$-th detachment is placed in a point with coordinates $$$(x_i, y_i)$$$. All detachments are placed in different points.</p>\n<p>Brimstone should visit each detachment at least once. You can choose the detachment where Brimstone starts.</p><p>To move from one detachment to another he should first choose one of four directions of movement (up, right, left or down) and then start moving with the constant speed of one unit interval in a second until he comes to a detachment. After he reaches an arbitrary detachment, he can repeat the same process.</p><p>Each $$$t$$$ seconds an orbital strike covers the whole surface, so at that moment Brimstone should be in a point where some detachment is located. He can stay with any detachment as long as needed.</p><p>Brimstone is a good commander, that\'s why he can create <span class="tex-font-style-bf">at most one</span> detachment and place it in any empty point with integer coordinates he wants before his trip. Keep in mind that Brimstone will need to visit this detachment, too.</p><p>Help Brimstone and find such minimal $$$t$$$ that it is possible to check each detachment. If there is no such $$$t$$$ report about it.</p>',
+      '<p>There are $$$n$$$ detachments on the surface, numbered from $$$1$$$ to $$$n$$$, the $$$i$$$-th detachment is placed in a point with coordinates $$$(x_i, y_i)$$$. All detachments are placed in different points.</p>\n<p>Brimstone should visit each detachment at least once. You can choose the detachment where Brimstone starts.</p>\n<p>To move from one detachment to another he should first choose one of four directions of movement (up, right, left or down) and then start moving with the constant speed of one unit interval in a second until he comes to a detachment. After he reaches an arbitrary detachment, he can repeat the same process.</p>\n<p>Each $$$t$$$ seconds an orbital strike covers the whole surface, so at that moment Brimstone should be in a point where some detachment is located. He can stay with any detachment as long as needed.</p>\n<p>Brimstone is a good commander, that\'s why he can create <span class="tex-font-style-bf">at most one</span> detachment and place it in any empty point with integer coordinates he wants before his trip. Keep in mind that Brimstone will need to visit this detachment, too.</p>\n<p>Help Brimstone and find such minimal $$$t$$$ that it is possible to check each detachment. If there is no such $$$t$$$ report about it.</p>',
   },
   input: {
     htmlSpecification:
-      "The first line contains a single integer $$$n$$$ $$$(2 \\le n \\le 1000)$$$ â€” the number of detachments.\nIn each of the next $$$n$$$ lines there is a pair of integers $$$x_i$$$, $$$y_i$$$ $$$(|x_i|, |y_i| \\le 10^9)$$$ â€” the coordinates of $$$i$$$-th detachment.\nIt is guaranteed that all points are different.\n",
+      "The first line contains a single integer $$$n$$$ $$$(2 \\le n \\le 1000)$$$ — the number of detachments.\nIn each of the next $$$n$$$ lines there is a pair of integers $$$x_i$$$, $$$y_i$$$ $$$(|x_i|, |y_i| \\le 10^9)$$$ — the coordinates of $$$i$$$-th detachment.\nIt is guaranteed that all points are different.\n",
   },
   output: {
     htmlSpecification:
@@ -16,9 +16,11 @@ const problemData = {
   },
   memoryLimit: {
     value: 256,
+    unit: "MB",
   },
   timeLimit: {
     value: 2,
+    unit: "s",
   },
   sampleTestCases: [
     {
